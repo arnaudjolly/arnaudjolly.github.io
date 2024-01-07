@@ -1,6 +1,5 @@
 <html>
 	<head>
-<script src="js/nonogram.min.js"></script>
 <script>
 
 const first = {
@@ -58,25 +57,10 @@ const second = {
   vhints: [[10],[1,1],[1,1],[1,1],[1,1],[],[],[10],[1,1],[1,1],[1,1],[10],[],[],[10],[1,1],[1,1],[1,1],[1],[],[],[10],[1,1,1],[1,1,1],[1,1,1],[1,1]]
 };
 
-const theme = {
-	  theme: {
-	    filledColor: '#000',
-	    strokeColor: '#ccc',
-	    meshColor: '#000',
-	  }
-};
-
-window.addEventListener('load', () => {
-	new nonogram.Game(first.hhints, first.vhints, 'ze-game', theme);
-	new nonogram.Game(second.hhints, second.vhints, 'simple', theme);
-});
 </script>
 </head>
 
 <body>
-<canvas id="ze-game" width="800" height="800"></canvas>
-<canvas id="simple" width="800" height="800"></canvas>
-
 <main>
   <div class="wrapper">
     <div class="puzzle">
@@ -95,7 +79,7 @@ window.addEventListener('load', () => {
 <script>
 
 const creator = new Nonogram.Creator();
-const puzzle  = creator.createFromHints( { row: second.hhints, column: second.vhints } );
+const puzzle  = creator.createFromHints( { row: first.hhints, column: first.vhints } );
 const gui     = new Nonogram.Gui( 'js/best-nonogram/themes/default' );
 
 gui.draw( puzzle );
