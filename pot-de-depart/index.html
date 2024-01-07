@@ -71,10 +71,37 @@ window.addEventListener('load', () => {
 	new nonogram.Game(second.hhints, second.vhints, 'simple', theme);
 });
 </script>
-	</head>
+</head>
+
 <body>
 <canvas id="ze-game" width="800" height="800"></canvas>
 <canvas id="simple" width="800" height="800"></canvas>
 
+<main>
+  <div class="wrapper">
+    <div class="puzzle">
+      <div data-nonogram-puzzle-grid></div>
+    </div>
+    <div class="game-controls">
+      <div data-nonogram-game-controls></div>
+    </div>
+    <div class="generate-controls">
+      <div data-nonogram-generate-controls></div>
+    </div>
+    <div class="console">
+      <div data-nonogram-console></div>
+    </div>
+  </div>
+</main>
+
+<script src="js/best-nonogram/nonogram.min.js"></script>
+<script>
+
+const creator = new Nonogram.Creator();
+const puzzle  = creator.createFromHints( { row: second.hhints, column: second.vhints } );
+const gui     = new Nonogram.Gui( 'js/best-nonogram/themes/default' );
+
+gui.draw( puzzle );
+</script>
 </body>
 </html>
